@@ -30,7 +30,7 @@ mongo.connect(url, options, (err, mongoClient) => {
     menudb = db.collection('menu')
 })
 //get
-app.get('/', (req, res) => res.status(200).send('Hey class!'))
+app.get('/', (req, res) => res.status(200).send('Look it is working!'))
 
 //post
 app.post('/', (req, res) => {
