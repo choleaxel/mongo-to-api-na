@@ -1,12 +1,14 @@
+require('dotenv/config')
 const express = require('express') 
 const mongo = require('mongodb').MongoClient
 const cors = require('cors')
+
 
 const app = express()
 app.use(cors())
 app.use(express.json())
 
-const url = 'mongodb+srv://Nfrancis22:Nscfcat22@cluster0.xmrry.mongodb.net?retryWrites=true&w=majority'
+const url = process.env.MONGO_URL
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -44,7 +46,7 @@ app.patch('/', (req, res) => {
         }
         )
         .then(() => res.status(200).send('Item was updated'))
-})//JOhnathan is fixing this and will upload ot github
+})//Johnathan is fixing this and will upload ot github
 
 //delete
 app.delete('/', (req, res) => {
